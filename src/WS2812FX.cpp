@@ -86,7 +86,8 @@ bool WS2812FX::service() {
     }
     if(doShow) {
 #if defined(ARDUINO_ARCH_RP2040) // RP2040 & RP235XX
-      delayMicroseconds(100); // still need some delay for bigger strips/quicker animations
+      // delayMicroseconds(100); // still need some delay for bigger strips/quicker animations
+      delay(1);
 #else
       delay(1); // for ESP32 (see https://forums.adafruit.com/viewtopic.php?f=47&t=117327)
 #endif
